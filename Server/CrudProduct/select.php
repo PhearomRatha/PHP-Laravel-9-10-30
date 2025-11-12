@@ -10,7 +10,7 @@ while($row=mysqli_fetch_assoc($result)){
                 <td>$row[pro_name]</td>
                 <td>$row[pro_qty]</td>
                 <td>$row[pro_price]$</td>
-                <td> <a href='remove.php' class='btn btn-danger'> remove</a> </td>
+                <td> <a href='remove.php?id=$row[code]' class='btn btn-danger' > remove</a> </td>
                  <td> <a href='' class='btn btn-primary'> update</a> </td>
             </tr>
     
