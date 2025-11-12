@@ -16,7 +16,7 @@
                 <th>Name</th>
                 <th>Qty</th>
                 <th>Price</th>
-                <th colspan="2">Action</th>
+                <th colspan="2">Action❤️</th>
             </tr>
         </thead>
         <tbody>
