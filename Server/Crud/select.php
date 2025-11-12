@@ -8,9 +8,9 @@ while($row= mysqli_fetch_assoc($select_send)){
             <td>$row[pro_name]</td>
             <td>$row[pro_price]</td>
             <td>$row[pro_qty]</td>
-            
-        </tr>";
-
+            <td><a class='btn btn-danger'>Remove</a> </td>
+            <td><a class='btn btn-primary'>Update</a> </td>  
+        </tr>"; 
 }
 
 
