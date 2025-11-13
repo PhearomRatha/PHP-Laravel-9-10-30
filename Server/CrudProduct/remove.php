@@ -6,7 +6,7 @@ if(isset($_GET['id'])){
     $remove="DELETE FROM product where code = $id";
     $remove_send=$con->query($remove);
     if($remove_send){
-        echo "remove succesfully";
+        echo "<script>alert('remove succesfully')</script>";
         header("location:table.php");
     }
 
