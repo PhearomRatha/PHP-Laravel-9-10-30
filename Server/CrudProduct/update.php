@@ -9,7 +9,7 @@ if(isset($_GET['id'])){
    $code = $row['code'];
    $name = $row['pro_name'];
    $qty = $row['pro_qty'];
-   $price=$row['pro_price'];
+   $price=$row['pro_price']; 
 
   
 }
@@ -55,6 +55,7 @@ if(isset($_GET['id'])){
 
 
 <?php
+// update 
 
 if(isset($_POST['update'])){
     $code =$_POST['code'];
