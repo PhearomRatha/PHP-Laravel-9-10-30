@@ -22,11 +22,7 @@
         </thead>
         <tbody>
 
-             <?php
-         include "select.php";
-        
-        
-        ?>
+    <?php include "select.php";?>
         </tbody>
 
     </table>
