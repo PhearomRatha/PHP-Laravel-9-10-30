@@ -72,7 +72,7 @@ if(isset($_POST['update'])){
     if($update){
         echo "update successfully";
         // redirect to table
-        header("Location:table.php");
+        header("Location:index.php");
     }
 
 

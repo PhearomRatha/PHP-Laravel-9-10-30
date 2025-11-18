@@ -47,7 +47,7 @@ if(isset($_POST['submit'])){
     if($insert_send){
         echo "<script>alert('insert succefully')</script>";
         // redirect to table page
-        header("Location:table.php");
+        header("Location:index.php");
     }
     
 

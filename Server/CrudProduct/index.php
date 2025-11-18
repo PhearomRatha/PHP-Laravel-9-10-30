@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
-    <a href="FormAdd.php" class="btn btn-primary">Add Product</a>
+    <a href="./CrudProduct/FormAdd.php" class="btn btn-primary">Add Product</a>
     <table class="table text-center w-75 m-auto" >
         <thead class="table-dark">
             <tr>
@@ -29,7 +29,7 @@
                  <td> <a href="" class="btn btn-primary"> update</a> </td>
             </tr>
             <?php 
-             include "select.php";
+             include "./CrudProduct/select.php";
             ?>
         </tbody>
 

@@ -10,22 +10,31 @@
 <body>
 
 <a href="insert.php" class="btn btn-primary">Add User</a>
+<table class="table text-center w-75 m-auto" >
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Img</th>
+                <th colspan="2">Action❤️</th>
+            </tr>
+        </thead>
+        <tbody>
 
-<div class=" container">
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="card" style="width: 18rem;">
-                <img src="" alt="" class="card-img-top">
-                <div class="card-body">
-                    <h4 class="card-title">username</h4>
-                    <h4 class="card-text">email</h4>
-                    <a href="" class="btn btn-danger">remove</a>
-                    <a href="" class="btn btn-primary">update</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+             <?php
+         include "select.php";
+        
+        
+        ?>
+        </tbody>
+
+    </table>
+
+
+    
+     
+
     
 </body>
 </html>

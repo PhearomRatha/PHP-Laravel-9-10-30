@@ -9,7 +9,7 @@ if(isset($_GET['code'])){
     $remove_send=$con->query($remove);
     if($remove_send){
         echo "<script>alert('remove succesfully')</script>";
-        header("location:table.php");
+        header("location:index.php");
     }
 
 }

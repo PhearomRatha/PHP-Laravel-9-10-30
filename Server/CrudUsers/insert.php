@@ -40,12 +40,13 @@ if(isset($_POST['submit'])){
     $email= $_POST['email'];
     $img= $_FILES['img']['name'];
     $tmp=$_FILES['img']['tmp_name'];
-    $path="../CrudUsers/uploads/" .$img;
+    $path="./uploads/" .$img;
     if(move_uploaded_file($tmp,$path)){
         $insert = "INSERT INTO user (username,email,image)VALUES('$username','$email','$img')";
         $insert_send=$conn->query($insert);
         if($insert_send){
             echo "insert success";
+            header("Location:index.php");
 
         }else{
             echo "insert fail";
