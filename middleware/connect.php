@@ -1,14 +1,12 @@
+<!-- connect.php -->
+
+
 <?php
-$server ="localhost";
-$username="root";
-$psw="";
-$db="middlewear";
-$con=mysqli_connect($server,$username,$psw,$db);
+
+$con=mysqli_connect("localhost","root","","php-9-10");
 if(!$con){
-    echo "connect fail";
+    echo "fail to connect";
 }
-
-
 
 
 ?>

@@ -1,5 +1,4 @@
-
-<!-- login.php -->
+<!-- register.php -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,52 +11,38 @@
 </head>
 <body>
     <form class="w-25 m-auto shadow-lg p-3 " method="post">
-        <h2 class="text-center">Login</h2>
-
+        <h2 class="text-center">Register</h2>
+        <input type="text" placeholder="username" name="username" class="form-control"> <br> 
         <input type="text" placeholder="email" name="email"  class="form-control"> <br> 
         <input type="text" placeholder="psw" name="psw" class="form-control"> <br> 
        <div class="mb-3 d-flex justify-content-center align-items-center flex-column">
-        <button type="submit" name="submit" class="btn btn-success">Login</button> <br>
-        <a href="regiser.php">Don't have account</a> 
+         <button type="submit" name="submit" class="btn btn-success">Register</button> <br>
+        <a href="login">Already have account</a> 
        </div>
     </form>
     
 </body>
 </html>
 
-
 <?php
-
 include "connect.php";
+
 if(isset($_POST['submit'])){
+    $username=$_POST['username'];
     $email=$_POST['email'];
-    $psw=$_POST['psw'];
-    $select = "SELECT * FROM users where email = '$email'";
-    $select_send=$con->query($select);
-    if($select_send && mysqli_num_rows($select_send) > 0){
-        $row=mysqli_fetch_assoc($select_send);
-        if(password_verify($psw,$row['psw'])){
-            session_start();
-            $_SESSION['users']['role']=$role=$row['role'];
-            echo $role;
-            if($role == "admin"){
-                header("location:dashboard.php");
-                exit();
-            }else if($role == "user"){
-                header("location:welcome.php");
-                exit();
-            }
+    $psw=password_hash($_POST['psw'],PASSWORD_DEFAULT);
+    $role="user";
 
+    $insert = "INSERT INTO users (username,email,psw,role) VALUES('$username','$email','$psw','$role')";
+    $insert_send=$con->query($insert);
 
-        }else{
-            echo "wrong psw";
-        }
-
+    if($insert_send){
+        header("location:login.php");
     }else{
-        echo "no user found";
+        echo "something wrong";
     }
-
-
+    
+    
 }
 
 

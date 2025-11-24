@@ -1,9 +1,16 @@
 <!-- dashboard.php -->
 
+
 <?php
-session_start();
-require "middleware.php";
+require("auth.php");
 checkLogin();
 
+
+if($_SESSION['users']['role'] != "admin"){
+    header("location:login.php");
+}
+
 ?>
-<h1>welcome to dashboard</h1>;
+
+
+<h1>Welcome to dashbord  manus Smos</h1>

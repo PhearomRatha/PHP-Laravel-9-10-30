@@ -18,48 +18,30 @@
         <input type="text" placeholder="psw" name="psw" class="form-control"> <br> 
        <div class="mb-3 d-flex justify-content-center align-items-center flex-column">
         <button type="submit" name="submit" class="btn btn-success">Login</button> <br>
-        <a href="regiser.php">Don't have account</a> 
+        <a href="register.php">Don't have account</a> 
        </div>
     </form>
     
 </body>
 </html>
-
-
 <?php
 
 include "connect.php";
+session_start();
 if(isset($_POST['submit'])){
     $email=$_POST['email'];
     $psw=$_POST['psw'];
-    $select = "SELECT * FROM users where email = '$email'";
+    $select= "SELECT * FROM user where email = '$email' AND psw = '$psw' ";
     $select_send=$con->query($select);
-    if($select_send && mysqli_num_rows($select_send) > 0){
-        $row=mysqli_fetch_assoc($select_send);
-        if(password_verify($psw,$row['psw'])){
-            session_start();
-            $_SESSION['users']['role']=$role=$row['role'];
-            echo $role;
-            if($role == "admin"){
-                header("location:dashboard.php");
-                exit();
-            }else if($role == "user"){
-                header("location:welcome.php");
-                exit();
-            }
-
-
-        }else{
-            echo "wrong psw";
-        }
-
+    if(mysqli_num_rows($select_send)>0){
+        $_SESSION['user'] = $email;
+        
+       header("location: dashboard.php");
+        
     }else{
-        echo "no user found";
+        echo "login fail";
     }
-
-
 }
-
 
 
 
