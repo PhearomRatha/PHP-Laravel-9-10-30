@@ -47,8 +47,6 @@ if(isset($_POST['submit'])){
                 header("location:welcome.php");
                 exit();
             }
-
-
         }else{
             echo "wrong psw";
         }
