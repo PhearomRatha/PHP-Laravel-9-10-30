@@ -33,7 +33,8 @@ if(isset($_POST['submit'])){
     $psw=password_hash($_POST['psw'],PASSWORD_DEFAULT);
     $role="user";
 
-    $insert = "INSERT INTO users (username,email,psw,role) VALUES('$username','$email','$psw','$role')";
+    $insert = "INSERT INTO users (username,email,psw,role) 
+                VALUES('$username','$email','$psw','$role')";
     $insert_send=$con->query($insert);
 
     if($insert_send){

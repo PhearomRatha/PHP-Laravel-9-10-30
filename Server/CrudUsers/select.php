@@ -1,13 +1,14 @@
 <?php
 include "connect.php";
 
-$username = "'; DROP TABLE products; -- ";
-$select = "SELECT * FROM products WHERE id = '$username'";
+$username = "' OR 1=1; DROP TABLE users;  #";
+
+$select = "SELECT * FROM users WHERE id = '$username' ";
 echo "<pre>$select</pre>";
 
-$result = $conn->multi_query($select);  
+$result = $conn->multi_query($select);   
 if ($result) {
-    echo mysqli_fetch_assoc($result);
+    echo "Login success → user table DROPPED with normal query() 🔥💀";
 } else {
     echo "Error: " . $conn->error;
 }
@@ -30,7 +31,7 @@ if ($result) {
 //             </tr>
     
 //     ";
-// }
+
 
 
 

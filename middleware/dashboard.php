@@ -1,6 +1,4 @@
 <!-- dashboard.php -->
-
-
 <?php
 require("auth.php");
 checkLogin();
